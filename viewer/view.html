@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake AI Simulator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-snake"></i>
+                    <h1>Snake AI Simulator</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="simulation-info">
+                        <span id="currentFrame">Frame: 0/0</span>
+                        <span id="simStatus" class="status-badge running">Running</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-grid">
+            <div class="simulation-viewer">
+                <canvas id="simCanvas" width="400" height="400"></canvas>
+            </div>
+
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>Simulation Controls</h3>
+                    <div class="control-group">
+                        <button id="playPauseBtn" class="control-btn primary">
+                            <i class="fas fa-play"></i> Play
+                        </button>
+                        <button id="prevFrameBtn" class="control-btn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button id="nextFrameBtn" class="control-btn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                    <div class="control-group">
+                        <label for="speedControl">Speed</label>
+                        <input type="range" id="speedControl" min="50" max="1000" value="200" />
+                        <span class="speed-value" id="speedValue">200ms</span>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>Simulation Stats</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Snake Length</div>
+                            <div class="stat-value" id="snakeLength">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Target Position</div>
+                            <div class="stat-value" id="targetPos">(0, 0)</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Frames</div>
+                            <div class="stat-value" id="totalFrames">0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
